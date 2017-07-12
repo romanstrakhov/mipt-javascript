@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "main": "roman-time.js",
+  "scripts": {
+    "test": "eslint roman-time.js && mocha roman-time.spec.js"
+  },
+  "dependencies": {
+    "eslint": "4.0.0",
+    "mocha": "3.4.2"
+  },
+  "eslintConfig": {
+    "rules": {
+      "no-console": "error"
+    }
+  }
+}
