@@ -3,7 +3,8 @@
 /**
  * Телефонная книга
  */
-var phoneBook;
+var phoneBook = [];
+var i = 0;
 
 /**
  * Добавляет записи
@@ -12,6 +13,45 @@ var phoneBook;
  * @param {String} email
  */
 exports.add = function (phone, name, email) {
+
+	// i++
+	// console.log (i);
+	// console.log (phone, name, email);	
+
+	if (!name || name == '') {
+		// console.log ('>>> empty name');
+		return false;
+	}
+
+	if (!phone.match(/\d{10}/i)) {
+		// console.log ('>>> wrong phone: ' + phone);
+		return false;	
+	} 
+
+	if (phoneBook.some(isPhoneInside, phone)) {
+	// if (phoneBook.some(elem => elem.phone == phone)) {
+		// console.log ('>>> duplicate phone: ' + phone);
+		return false;	
+	} 
+
+
+	var record = {
+		phone: phone, 
+		name: name,
+		email: email
+		}
+
+	var a = phoneBook.length;
+	if (phoneBook.push(record) - a != 1) return false;
+
+
+	// console.log(a, b);
+	// console.log(phoneBook);
+
+	return true;
+	
+
+
 
 };
 
@@ -32,3 +72,11 @@ exports.update = function (phone, name, email) {
 exports.find = function (query) {
 
 };
+
+
+function isPhoneInside(arr, index) {
+	return this == arr.phone;
+
+}
+
+
