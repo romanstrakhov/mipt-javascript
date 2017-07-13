@@ -12,6 +12,10 @@ describe('Телефонная книга', function () {
     });
 
     it('не должна добавлять неправильные записи', function () {
+        assert(!phoneBook.add('5154440043', 'Normal', ' grishaex@ample.org')); //$
+        assert(!phoneBook.add()); //$
+        assert(!phoneBook.add('12312312312312','','')); //$
+        assert(!phoneBook.add('1212312312','','133311')); //$
         assert(!phoneBook.add('3330033', 'Неизвестный', 'unknown@example.org'));
         assert(!phoneBook.add('5551110011', 'Алексей'));
         assert(!phoneBook.add('5555550055'));
