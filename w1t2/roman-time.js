@@ -16,8 +16,6 @@ catch (e) {
 }
 
 if (digits.length != 2) throw TypeError('Wrong format. Use XX:YY');
-// if (digits[0].isNaN) throw TypeError('Wrong hours. Not a number');
-// if (digits[1].isNaN) throw TypeError('Wrong minutes. Not a number');
 if (isNaN(Number(digits[0]))) throw TypeError('Wrong hours. Not a number');
 if (isNaN(Number(digits[1]))) throw TypeError('Wrong minutes. Not a number');
 if (digits[0]>23) throw TypeError('Wrong hours. Use 0-23');
