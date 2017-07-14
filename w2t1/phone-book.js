@@ -89,13 +89,15 @@ exports.update = function (phone, name, email) {
 exports.find = function (query) {
 
 	// empty query results false
-	if (!query || query.trim() === '') return undefined;
+	if (!query || query.trim() === '') return [];
+	
+	var arFiltered;
 	
 	if (query === '*') {
-		var	arFiltered = phoneBook;
+		arFiltered = phoneBook;
 	}
 	else {
-		var arFiltered = phoneBook.filter(isAnyField, query);	
+		arFiltered = phoneBook.filter(isAnyField, query);	
 	}
 	
 	return arFiltered.sort(function(a, b) {
