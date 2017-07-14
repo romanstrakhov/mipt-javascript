@@ -62,6 +62,10 @@ exports.update = function (phone, name, email) {
 	}, record.phone);
 
 
+	if (i<0) {
+		return false;
+	}
+
 	// console.log(i);
 	// console.log(record);
 	// console.log('before:');
@@ -85,7 +89,7 @@ exports.update = function (phone, name, email) {
 exports.find = function (query) {
 
 	// empty query results false
-	if (!query || query === '') return false;
+	if (!query || query.trim() === '') return undefined;
 	
 	if (query === '*') {
 		var	arFiltered = phoneBook;
