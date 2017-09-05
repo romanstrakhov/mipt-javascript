@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "main": "robbery.js",
+  "scripts": {
+    "test": "eslint robbery.js && mocha robbery.spec.js"
+  },
+  "dependencies": {
+    "eslint": "4.0.0",
+    "mocha": "3.4.2"
+  },
+  "eslintConfig": {
+    "rules": {
+      "no-console": "error"
+    }
+  }
+}
